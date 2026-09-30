@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   push:
     branches: [ main ]
-  workflow_dispatch:  # اجازه اجرای دستی از تب Actions
+  workflow_dispatch:  # Allow manual execution from the Actions tab
 
 jobs:
   scan:
@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # Gitleaks نیاز به تاریخچه کامل دارد
+          fetch-depth: 0   # Gitleaks needs a full history
 
       # ── Gitleaks ────────────────────────────────
       - name: Gitleaks — scan for hardcoded secrets

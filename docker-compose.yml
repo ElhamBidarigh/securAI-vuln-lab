@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: securAI-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: securAI_lab
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppass
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-prootpass"]
+      interval: 5s
+      retries: 10
+
+  web-vuln:
+    image: php:8.3-apache
+    container_name: securAI-vuln
+    ports:
+      - "8081:80"
+    volumes:
+      - ./vuln-app:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      bash -c "docker-php-ext-install mysqli && apache2-foreground"
+
+  web-secure:
+    image: php:8.3-apache
+    container_name: securAI-secure
+    ports:
+      - "8082:80"
+    volumes:
+      - ./secure-app:/var/www/html
+      - uploads-data:/var/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      bash -c "docker-php-ext-install mysqli && apache2-foreground"
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: securAI-pma
+    ports:
+      - "8083:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpass
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
+  uploads-data:

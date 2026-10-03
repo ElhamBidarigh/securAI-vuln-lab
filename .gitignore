@@ -1,0 +1,14 @@
+# Environment
+.env
+.env.*
+
+# Uploaded files (from exploit tests)
+vuln-app/uploads/*
+!vuln-app/uploads/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

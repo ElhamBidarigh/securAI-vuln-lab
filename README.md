@@ -103,8 +103,8 @@ See report/SECURITY-REPORT.md - a real pentest-style report with CVSS scores, Po
 | Tool | Type | Link |
 |------|------|------|
 | 🛡️ Audit Tool | Self-assessment (browser) | [Live demo](https://elhambidarigh.github.io/securai/) |
-| 🔬 Vuln Lab | Educational (PHP/MySQL) | You are here |
-| ⚙️ Security Action | CI/CD (GitHub Actions) | [Workflow](.github/workflows/security-scan.yml) |
+| 🔬 Vuln Lab | Educational (PHP/MySQL) | [Repo](https://github.com/ElhamBidarigh/securAI-vuln-lab) |
+| 🔐 JWT Analyzer | CLI (Python) | [Repo](https://github.com/ElhamBidarigh/jwt-analyzer) |
 | 🔍 Active Scanner | Live URL scanner (PHP) | [Repo](https://github.com/ElhamBidarigh/securAI-active-scanner) |
 
 ## Tech stack

@@ -6,7 +6,7 @@ A deliberately vulnerable PHP/MySQL application built to demonstrate the 5 most 
 
 ## Demo
 
-### SQL Injection — exploitable in the vulnerable app
+### SQL Injection - exploitable in the vulnerable app
 
 ![SQL Injection succeeded](docs/screenshot-sqli-success.png)
 

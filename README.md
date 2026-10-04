@@ -1,6 +1,6 @@
 # 🔬 SecurAI Vuln Lab
 
-A deliberately vulnerable PHP/MySQL application built to demonstrate the 5 most common OWASP Top 10 vulnerabilities — and their fixes.
+A deliberately vulnerable PHP/MySQL application built to demonstrate the 5 most common OWASP Top 10 vulnerabilities - and their fixes.
 
 **WARNING: This app is intentionally insecure. It exists only for education and portfolio purposes. Never deploy vuln-app/ on any internet-facing server. Use Docker in an isolated environment.**
 
@@ -10,11 +10,11 @@ A deliberately vulnerable PHP/MySQL application built to demonstrate the 5 most 
 
 ![SQL Injection succeeded](docs/screenshot-sqli-success.png)
 
-### Same attack — blocked in the secure app
+### Same attack - blocked in the secure app
 
 ![SQL Injection blocked](docs/screenshot-sqli-blocked.png)
 
-### Automated test suite — 10/10 tests pass
+### Automated test suite - 10/10 tests pass
 
 ![Tests passing](docs/screenshot-tests-pass.png)
 
@@ -66,7 +66,7 @@ Expected output: **10 passed, 0 failed**
 1. Go to http://localhost:8081/login.php
 2. Username: `' OR '1'='1' -- ` (with trailing space)
 3. Password: anything
-4. Click Sign in — you're logged in as admin without a password
+4. Click Sign in - you're logged in as admin without a password
 
 ### IDOR
 
@@ -78,7 +78,7 @@ Expected output: **10 passed, 0 failed**
 
 1. Log in and go to http://localhost:8081/comment.php
 2. Post: `<script>alert(1)</script>`
-3. Reload http://localhost:8081/ — the script fires in every visitor's browser
+3. Reload http://localhost:8081/ - the script fires in every visitor's browser
 
 ### File Upload to RCE
 
@@ -92,11 +92,11 @@ This repository ships with a GitHub Actions workflow that runs on every PR and p
 
 See .github/workflows/security-scan.yml
 
-Note: The workflow is expected to fail on this repo — that's the point. It demonstrates SecurAI's ability to detect real vulnerabilities in real code.
+Note: The workflow is expected to fail on this repo - that's the point. It demonstrates SecurAI's ability to detect real vulnerabilities in real code.
 
 ## Full audit report
 
-See report/SECURITY-REPORT.md — a real pentest-style report with CVSS scores, PoCs, and remediation.
+See report/SECURITY-REPORT.md - a real pentest-style report with CVSS scores, PoCs, and remediation.
 
 ## The full SecurAI toolkit
 

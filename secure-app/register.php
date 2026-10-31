@@ -25,7 +25,7 @@ input{width:100%;padding:10px;margin:6px 0 14px;background:#111827;border:1px so
 button{background:#10b981;color:#04121a;padding:10px 20px;border:0;border-radius:6px;font-weight:700;cursor:pointer;width:100%}
 .msg{color:#34d399;margin-bottom:12px}.err{color:#f87171;margin-bottom:12px}</style></head>
 <body>
-  <h1>Register — Secure</h1>
+  <h1>Register - Secure</h1>
   <?php if ($msg): ?><div class="msg"><?= htmlspecialchars($msg, ENT_QUOTES) ?></div><?php endif; ?>
   <?php if ($err): ?><div class="err"><?= htmlspecialchars($err, ENT_QUOTES) ?></div><?php endif; ?>
   <form method="POST">

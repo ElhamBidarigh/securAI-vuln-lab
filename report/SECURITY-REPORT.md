@@ -1,4 +1,4 @@
-# Security Audit Report — SecurAI Vuln Lab
+# Security Audit Report - SecurAI Vuln Lab
 
 **Prepared by:** Elham Bidarigh
 **Scope:** `vuln-app/` (intentionally vulnerable PHP/MySQL application)
@@ -28,11 +28,11 @@ against both apps and asserts:
 
 ---
 
-## FINDING-001 — SQL Injection in Login
+## FINDING-001 - SQL Injection in Login
 
-**Severity:** Critical — CVSS 9.8
+**Severity:** Critical - CVSS 9.8
 **Endpoint:** `POST /login.php`
-**OWASP:** A03:2021 — Injection
+**OWASP:** A03:2021 - Injection
 
 ### Description
 
@@ -61,11 +61,11 @@ Prepared statements with bound parameters. See `secure-app/login.php`.
 
 ---
 
-## FINDING-002 — Plain-text Password Storage
+## FINDING-002 - Plain-text Password Storage
 
-**Severity:** Critical — CVSS 9.1
+**Severity:** Critical - CVSS 9.1
 **Endpoint:** `POST /register.php`
-**OWASP:** A02:2021 — Cryptographic Failures
+**OWASP:** A02:2021 - Cryptographic Failures
 
 ### Description
 
@@ -85,11 +85,11 @@ Use `password_hash(PASSWORD_BCRYPT)` and `password_verify()`. See
 
 ---
 
-## FINDING-003 — IDOR in Profile Endpoint
+## FINDING-003 - IDOR in Profile Endpoint
 
-**Severity:** High — CVSS 7.5
+**Severity:** High - CVSS 7.5
 **Endpoint:** `GET /profile.php?id=<n>`
-**OWASP:** A01:2021 — Broken Access Control
+**OWASP:** A01:2021 - Broken Access Control
 
 ### Description
 
@@ -110,11 +110,11 @@ Never trust user-supplied IDs. Use the session only:
 
 ---
 
-## FINDING-004 — Stored XSS in Comments
+## FINDING-004 - Stored XSS in Comments
 
-**Severity:** High — CVSS 8.2
+**Severity:** High - CVSS 8.2
 **Endpoint:** `POST /comment.php` -> rendered on `index.php`
-**OWASP:** A03:2021 — Injection (XSS)
+**OWASP:** A03:2021 - Injection (XSS)
 
 ### Description
 
@@ -136,11 +136,11 @@ Escape all output:
 
 ---
 
-## FINDING-005 — Unrestricted File Upload -> RCE
+## FINDING-005 - Unrestricted File Upload -> RCE
 
-**Severity:** Critical — CVSS 9.1
+**Severity:** Critical - CVSS 9.1
 **Endpoint:** `POST /upload.php`
-**OWASP:** A04:2021 — Insecure Design
+**OWASP:** A04:2021 - Insecure Design
 
 ### Description
 

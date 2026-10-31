@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SecurAI — Report Builder
+SecurAI - Report Builder
 Combines Gitleaks + Semgrep + dependency audit results
 into a single beautiful HTML report.
 """
@@ -34,8 +34,8 @@ def collect_findings():
                 "severity": "critical",
                 "category": "Secrets",
                 "title": f.get("Description", "Hardcoded secret"),
-                "file": f.get("File", "—"),
-                "line": f.get("StartLine", "—"),
+                "file": f.get("File", "-"),
+                "line": f.get("StartLine", "-"),
                 "detail": f.get("Match", "")[:200],
             })
 
@@ -55,8 +55,8 @@ def collect_findings():
                     "severity": sev,
                     "category": rule.get("metadata", {}).get("category", "SAST"),
                     "title": rule.get("shortDescription", rid),
-                    "file": loc.get("artifactLocation", {}).get("uri", "—"),
-                    "line": loc.get("region", {}).get("startLine", "—"),
+                    "file": loc.get("artifactLocation", {}).get("uri", "-"),
+                    "line": loc.get("region", {}).get("startLine", "-"),
                     "detail": (rule.get("fullDescription") or rule.get("shortDescription") or "")[:300],
                 })
 
@@ -71,8 +71,8 @@ def collect_findings():
                     "category": "Dependencies",
                     "title": f"{pkg}: {adv.get('title', 'Vulnerable dependency')}",
                     "file": "composer.lock",
-                    "line": "—",
-                    "detail": adv.get("cve", "") + " — " + adv.get("link", ""),
+                    "line": "-",
+                    "detail": adv.get("cve", "") + " - " + adv.get("link", ""),
                 })
 
     # ── npm audit ────────────────────────────────────
@@ -85,7 +85,7 @@ def collect_findings():
                 "category": "Dependencies",
                 "title": f"{pkg}: {v.get('title', 'Vulnerable dependency')}",
                 "file": "package-lock.json",
-                "line": "—",
+                "line": "-",
                 "detail": v.get("url", ""),
             })
 
@@ -121,7 +121,7 @@ def render_html(findings):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SecurAI Security Report — {datetime.utcnow().strftime('%Y-%m-%d')}</title>
+<title>SecurAI Security Report - {datetime.utcnow().strftime('%Y-%m-%d')}</title>
 <style>
   :root{{--bg:#070b14;--surface:#0f1626;--border:#1f2b45;--text:#e6edf7;--muted:#8b9bb4;
         --crit:#ef4444;--high:#f59e0b;--med:#3b82f6;--low:#64748b;--ok:#10b981}}

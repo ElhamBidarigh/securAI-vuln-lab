@@ -20,5 +20,5 @@ input,button{margin-top:14px}button{background:#10b981;color:#04121a;padding:10p
   <form method="POST" enctype="multipart/form-data">
     <input type="file" name="file" required><button>Upload</button>
   </form>
-  <p style="color:#8b9bb4;font-size:13px">Try uploading a <code>.php</code> file — it will execute.</p>
+  <p style="color:#8b9bb4;font-size:13px">Try uploading a <code>.php</code> file - it will execute.</p>
 </body></html>

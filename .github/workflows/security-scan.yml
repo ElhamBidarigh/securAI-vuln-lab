@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0   # Gitleaks نیاز به تاریخچه کامل دارد
 
       # ── Gitleaks ────────────────────────────────
-      - name: Gitleaks — scan for hardcoded secrets
+      - name: Gitleaks - scan for hardcoded secrets
         uses: gitleaks/gitleaks-action@v2
         continue-on-error: true
         env:
@@ -44,7 +44,7 @@ jobs:
           fi
 
       # ── Semgrep ─────────────────────────────────
-      - name: Semgrep — SAST scan
+      - name: Semgrep - SAST scan
         uses: returntocorp/semgrep-action@v1
         continue-on-error: true
         with:
@@ -94,7 +94,7 @@ jobs:
               body += '_No summary generated._\n';
             }
             body += '\n📄 **Full report:** download the `securAI-report` artifact from the Actions tab.\n';
-            body += '\n— [SecurAI Audit Tool](https://elhambidarigh.github.io/securai/)';
+            body += '\n- [SecurAI Audit Tool](https://elhambidarigh.github.io/securai/)';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,

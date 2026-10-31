@@ -22,7 +22,7 @@ textarea{width:100%;height:100px;padding:10px;background:#111827;border:1px soli
 button{background:#10b981;color:#04121a;padding:10px 20px;border:0;border-radius:6px;font-weight:700;cursor:pointer}
 .comment{background:#111827;padding:14px;border-radius:8px;margin-bottom:10px;white-space:pre-wrap;word-break:break-word}</style></head>
 <body>
-  <h1>Post a comment — Secure</h1>
+  <h1>Post a comment - Secure</h1>
   <?php if ($msg): ?><p style="color:#34d399"><?= htmlspecialchars($msg, ENT_QUOTES) ?></p><?php endif; ?>
   <form method="POST">
     <?= csrf_field() ?>

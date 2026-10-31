@@ -32,7 +32,7 @@ input,button{margin-top:14px}button{background:#10b981;color:#04121a;padding:10p
 .msg{background:#111827;padding:10px;border-radius:6px;margin:14px 0;color:#34d399}
 .err{background:#111827;padding:10px;border-radius:6px;margin:14px 0;color:#f87171}</style></head>
 <body>
-  <h1>Upload a file — Secure</h1>
+  <h1>Upload a file - Secure</h1>
   <?php if ($msg): ?><div class="msg"><?= $msg ?></div><?php endif; ?>
   <?php if ($err): ?><div class="err"><?= htmlspecialchars($err, ENT_QUOTES) ?></div><?php endif; ?>
   <form method="POST" enctype="multipart/form-data">

